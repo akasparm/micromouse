@@ -17,7 +17,7 @@ int main(int argc, char *argv[])
     int inst_y = initial_y;
     int final_x;
     int final_y;
-    int t = 2;
+    int t = 10;
 
     int flag1;
     int flag2;
