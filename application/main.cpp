@@ -6,6 +6,36 @@
 
 // int main(int argc, char *argv[])
 // {
+
+//      //------------------This builds the outer walls-----------------
+//        for(int i=0; i<=15; i++)
+//        {    
+//            for(int j=0; j<=15; j++)
+//            {
+//                switch(i)
+//                {
+//                    case 0:
+//                        Simulator::setWall(i,j,'w');
+//                        break;
+                   
+//                    case 15:
+//                        Simulator::setWall(i,j,'e');
+//                        break;
+//                }
+//                switch(j)
+//                {
+//                    case 0:
+//                        Simulator::setWall(i,j,'s');
+//                        break;
+
+//                    case 15:
+//                        Simulator::setWall(i,j,'n');
+//                        break;                       
+//                }
+           
+//            }
+//        }
+
 //     if (argc > 2)
 //     {
 //         std::cerr << "Usage: ./main l/r \n";
