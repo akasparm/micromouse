@@ -7,41 +7,42 @@
 
 #pragma once
 
+namespace rwa2group11
+{
+    class Goal
+    {
+    protected:
+        std::array<int, 2> goal;
 
-namespace rwa2group11{
-    class Goal{
-        protected:
-            std::array<int,2> goal;
-            
-        public:
-            /**
-             * @brief Set the goal
-             * 
-             */
-            int* set_goal();
+    public:
+        /**
+         * @brief Set the goal
+         *
+         */
+        int *set_goal();
 
-            /**
-             * @brief Change the color of the Goal and Set text as 'G'
-             * 
-             * @param x 
-             * @param y 
-             */
-            void color_goal();
+        /**
+         * @brief Change the color of the Goal and Set text as 'G'
+         *
+         * @param x
+         * @param y
+         */
+        void color_goal();
     };
-    
 
+    class Algorithm
+    {
+    private:
+        std::array<int, 2> curr_loc{0, 0};
+        std::vector<std::tuple<int, int>> path;
+        std::vector<std::tuple<int, int>> path_f;
 
-    class Algorithm{
-        private:
-            std::array<int,2> curr_loc{0,0};
-            
-
-        public:
-            void left_wall_following(int* dir,int* temp);
-            void right_wall_following();
-            void way_back();
-            void set_wall(int* dir);
-
+    public:
+        void left_wall_following(int *dir, int *temp);
+        void right_wall_following(int *dir, int *temp);
+        void way_back(int *dir);
+        void set_wall(int *dir);
+        void set_borders();
     };
 
 }
