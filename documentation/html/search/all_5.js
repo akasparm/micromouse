@@ -1,7 +1,5 @@
 var searchData=
 [
-  ['wallfront_16',['wallFront',['../class_simulator.html#ab6b749c8f50c6268c7c777ae6879c80e',1,'Simulator']]],
-  ['wallleft_17',['wallLeft',['../class_simulator.html#a83249957b4edf5ddb8ee97355f4d229b',1,'Simulator']]],
-  ['wallright_18',['wallRight',['../class_simulator.html#af6b6e867ea624e5a616ae521e740d16b',1,'Simulator']]],
-  ['wasreset_19',['wasReset',['../class_simulator.html#aee20ffd948723e24a8f7b9e91066be36',1,'Simulator']]]
+  ['right_5fwall_5ffollowing_16',['right_wall_following',['../classrwa2group11_1_1_algorithm.html#a426b0d0475b96b1238679f8044688d82',1,'rwa2group11::Algorithm']]],
+  ['rwa2group11_17',['rwa2group11',['../namespacerwa2group11.html',1,'']]]
 ];

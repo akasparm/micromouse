@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['simulator_20',['Simulator',['../class_simulator.html',1,'']]]
+  ['algorithm_33',['Algorithm',['../classrwa2group11_1_1_algorithm.html',1,'rwa2group11']]]
 ];

@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['setcolor_31',['setColor',['../class_simulator.html#ae77656a3dea16067d95ca727c36afaab',1,'Simulator']]],
-  ['settext_32',['setText',['../class_simulator.html#aa033cf7d80338a24678b95ec6f69b371',1,'Simulator']]],
-  ['setwall_33',['setWall',['../class_simulator.html#aa0e3277ba6aeba683eb5888ba637a477',1,'Simulator']]]
+  ['mazeheight_49',['mazeHeight',['../class_simulator.html#a3e1a7230da3821cbc06924d4f3f71ece',1,'Simulator']]],
+  ['mazewidth_50',['mazeWidth',['../class_simulator.html#a3880464920ff0e7e5d72d7d610357a75',1,'Simulator']]],
+  ['moveforward_51',['moveForward',['../class_simulator.html#a0ac8075a09d517a4538dea7d70b80e55',1,'Simulator']]]
 ];

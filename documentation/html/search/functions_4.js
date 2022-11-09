@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['turnleft_34',['turnLeft',['../class_simulator.html#ab103b5780fb3102441270df9c006e435',1,'Simulator']]],
-  ['turnright_35',['turnRight',['../class_simulator.html#af3e20b66f7372a26639a2ecf6f881490',1,'Simulator']]]
+  ['right_5fwall_5ffollowing_52',['right_wall_following',['../classrwa2group11_1_1_algorithm.html#a426b0d0475b96b1238679f8044688d82',1,'rwa2group11::Algorithm']]]
 ];
