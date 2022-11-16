@@ -1,3 +1,18 @@
+/**
+ * @file    micromouse.cpp
+ * @author  Kshitij Karnawat (kshitij@umd.edu)
+ * @author  Akashkumar Parmar (akasparm@umd.edu)
+ * @author  Sai Teja Gilukara (saitejag@umd.edu)
+ * @brief
+ * @version 0.6
+ * @date    2022-11-07
+ *
+ * @copyright Copyright (c) 2022
+ *
+ */
+
+//--------------------------------------------Importing required libraries--------------------------------------------
+
 #include <iostream>
 #include <array>
 #include <vector>
@@ -7,6 +22,8 @@
 #include <unistd.h>
 #include "micromouse.h"
 
+//-----------------------------------------Function for generating a random goal----------------------------------------
+// Kshitij
 int *rwa2group11::Goal::set_goal()
 {
 
@@ -43,21 +60,24 @@ int *rwa2group11::Goal::set_goal()
     return goal.data();
 }
 
+//-------------------------------------Function for coloring the goal--------------------------------------------
+//Kshitij
 void rwa2group11::Goal::color_goal()
 {
-
     // colorize and add text
     Simulator::setColor(goal[0], goal[1], 'Y');
     Simulator::setText(goal[0], goal[1], "G");
-    Simulator::setColor(0,0,'y');
-    Simulator::setText(0,0,"H");
+    Simulator::setColor(0, 0, 'y');
+    Simulator::setText(0, 0, "H");
 }
 
+//----------------------------------Function for left-hand rule algorithm------------------------------------------
+// Akash
 void rwa2group11::Algorithm::left_wall_following(int *dir, int *temp)
 {
 
-    int goal_x = *temp;
-    int goal_y = *(temp + 1);
+    int goal_x = *temp;       // Goal Position x coordinate
+    int goal_y = *(temp + 1); // Goal Position y coordinate
 
     while (!(curr_loc[0] == goal_x && curr_loc[1] == goal_y))
     {
@@ -96,11 +116,13 @@ void rwa2group11::Algorithm::left_wall_following(int *dir, int *temp)
     }
 }
 
+//----------------------------------Function for right-hand rule algorithm------------------------------------------
+// Akash
 void rwa2group11::Algorithm::right_wall_following(int *dir, int *temp)
 {
 
-    int goal_x = *temp;
-    int goal_y = *(temp + 1);
+    int goal_x = *temp;       // Goal Position x coordinate
+    int goal_y = *(temp + 1); // Goal Position y coordinate
 
     while (!(curr_loc[0] == goal_x && curr_loc[1] == goal_y))
     {
@@ -134,10 +156,12 @@ void rwa2group11::Algorithm::right_wall_following(int *dir, int *temp)
     }
 }
 
+//----------------------------------Function for setting the walls------------------------------------------
+// Kshitij + Akash
 void rwa2group11::Algorithm::set_wall(int *dir)
 {
 
-    switch (*dir % 4)
+    switch (*dir % 4)                   // Switch case for wall setting
     {
     case 0:
         curr_loc[1]--;
@@ -205,14 +229,16 @@ void rwa2group11::Algorithm::set_wall(int *dir)
     }
 }
 
+//----------------------------Function for returning the robot to home position-----------------------------------
+// Sai Teja + Akash
 void rwa2group11::Algorithm::way_back(int *dir)
 {
 
-    Simulator::turnLeft();
+    Simulator::turnLeft();                          // Turning the robot after goal is reached
     Simulator::turnLeft();
     *dir = *dir + 2;
 
-    for (int i = 0; i < path.size(); i++)
+    for (unsigned int i = 0; i < path.size(); i++)  // Loop for keeping the track of optimal path
     {
         if (count(path_f.begin(), path_f.end(), path.at(i)) > 0)
         {
@@ -223,19 +249,18 @@ void rwa2group11::Algorithm::way_back(int *dir)
         {
             path_f.push_back(path.at(i));
         }
-
     }
 
     std::vector<int> temp_x;
     std::vector<int> temp_y;
 
-    Simulator::setColor(0,0,'w');
+    Simulator::setColor(0, 0, 'w');
 
     for (auto [X, Y] : path_f)
     {
         temp_x.push_back(X);
         temp_y.push_back(Y);
-        Simulator::setColor(X,Y,'w');
+        Simulator::setColor(X, Y, 'w');
         usleep(50000);
     }
 
@@ -253,7 +278,7 @@ void rwa2group11::Algorithm::way_back(int *dir)
         x_flag = temp_x.at(i - 1) - temp_x.at(i);
         y_flag = temp_y.at(i - 1) - temp_y.at(i);
 
-        switch (y_flag)
+        switch (y_flag)                             // Switch-case for robot orientation when returning back
         {
         case 1:
             switch (*dir % 4)
@@ -361,6 +386,8 @@ void rwa2group11::Algorithm::way_back(int *dir)
     }
 }
 
+//----------------------------------Function for setting the outer borders-----------------------------------------
+// Kshitij
 void rwa2group11::Algorithm::set_borders()
 {
 

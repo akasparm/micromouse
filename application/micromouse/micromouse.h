@@ -1,3 +1,16 @@
+/**
+ * @file    micromouse.h
+ * @author  Kshitij Karnawat (kshitij@umd.edu)
+ * @author  Akashkumar Parmar (akasparm@umd.edu)
+ * @author  Sai Teja Gilukara (saitejag@umd.edu)
+ * @brief 
+ * @version 0.1
+ * @date    2022-11-07
+ * 
+ * @copyright Copyright (c) 2022
+ * 
+ */
+
 #ifndef ___MICROMOUSE_H___
 #define ___MICROMOUSE_H___
 
@@ -5,10 +18,17 @@
 #include <array>
 #include "../simulator/simulator.h"
 
-#pragma once
 
+/**
+ * @brief Namespace under which all classes are defined
+ * 
+ */
 namespace rwa2group11
 {
+    /**
+     * @brief Class that contains methods related to Goal Position
+     * 
+     */
     class Goal
     {
     protected:
@@ -24,12 +44,14 @@ namespace rwa2group11
         /**
          * @brief Change the color of the Goal and Set text as 'G'
          *
-         * @param x
-         * @param y
          */
         void color_goal();
     };
 
+    /**
+     * @brief Class that contains methods related to Algorithms to move the Robot
+     * 
+     */
     class Algorithm
     {
     private:
@@ -38,10 +60,40 @@ namespace rwa2group11
         std::vector<std::tuple<int, int>> path_f;
 
     public:
+        /**
+         * @brief Follow left wall
+         * 
+         * @param dir pointer to an integer, points to the direction which robot faces
+         * @param temp pointer to an array, points to the current coordinate position
+         */
         void left_wall_following(int *dir, int *temp);
+
+        /**
+         * @brief Follow left wall
+         * 
+         * @param dir pointer to an integer, points to the direction which robot faces
+         * @param temp pointer to an array, points to the current coordinate position
+         */
         void right_wall_following(int *dir, int *temp);
+
+        /**
+         * @brief Follow left wall
+         * 
+         * @param dir pointer to an integer, points to the direction which robot faces
+         */
         void way_back(int *dir);
+
+        /**
+         * @brief Follow left wall
+         * 
+         * @param dir pointer to an integer, points to the direction which robot faces
+         */
         void set_wall(int *dir);
+
+        /**
+         * @brief Follow left wall
+         * 
+         */
         void set_borders();
     };
 
